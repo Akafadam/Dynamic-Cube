@@ -9,7 +9,7 @@ const spin = () =>{
   atan = Math.abs(Math.atan2(deltaY,deltaX));
   degrees = toDegrees(atan);
 
-  cube.style.transform = `rotate(${counter}deg)`;
+  cube.style.transform = `rotate3d(${Math.floor(deltaX)},${Math.floor(deltaY)},${Math.floor(degrees)},${counter}deg)`;
   counter = counter + degrees/20;
   text.innerHTML = `deltaX: ${deltaX}<br>deltaY: ${deltaY}<br>counter: ${counter}<br>arcTan: ${degrees}`;
 }
