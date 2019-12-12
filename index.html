@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
   <title>Document</title>
 </head>
 <body>
+  <p class="text"></p>
   <div class="container">
-  <div class="cube">
+  <div class="cube" onmousedown="play()" onmouseup="stop()" onmouseleave="stop()">
     <div class="cube-front face"><p>Front</p></div>
     <div class="cube-back face"><p>Back</p></div>
     <div class="cube-left face"><p>Left</p></div>

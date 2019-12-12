@@ -1,5 +1,5 @@
-const obj = document.getElementById('obj');
-const text = document.querySelector('p');
+const cube  = document.querySelector('.cube');
+const text = document.querySelector('.text');
 let counter = 0;
 
 const spin = () =>{
@@ -9,17 +9,17 @@ const spin = () =>{
   atan = Math.abs(Math.atan2(deltaY,deltaX));
   degrees = toDegrees(atan);
 
-  obj.style.transform = `translate(-50%,-50%) rotate(${counter}deg)`;
+  cube.style.transform = `rotate(${counter}deg)`;
   counter = counter + degrees/20;
   text.innerHTML = `deltaX: ${deltaX}<br>deltaY: ${deltaY}<br>counter: ${counter}<br>arcTan: ${degrees}`;
 }
 
 const play = () =>{
-  obj.addEventListener('mousemove',spin);  
+  cube.addEventListener('mousemove',spin);  
 }
 
 const stop = () =>{
-  obj.removeEventListener('mousemove',spin);  
+  cube.removeEventListener('mousemove',spin);  
 }
 
 const toDegrees  = (angle) => {
