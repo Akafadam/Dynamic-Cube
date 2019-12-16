@@ -14,6 +14,11 @@ p{
   font-size:20px;
 }
 
+.text{
+  top:10%;
+  left:10%;
+}
+
 .cube{
   transition:all 1s;
   width:100%;
@@ -58,27 +63,4 @@ p{
   position:absolute;
   height:100%;
   opacity:.5;
-}
-[id="top"]:checked ~ div{
-  transform:rotateX(-90deg);
-}
-
-[id="back"]:checked ~ div{
-  transform:rotateY(180deg);
-}
-
-[id="bottom"]:checked ~ div{
-  transform:rotateX(90deg);
-}
-
-[id="left"]:checked ~ div{
-  transform:rotateY(-90deg);
-}
-
-[id="right"]:checked ~ div{
-  transform:rotateY(90deg);
-}
-
-[id="front"]:checked ~ div{
-  transform:rotateY(0deg);
 }

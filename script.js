@@ -1,17 +1,20 @@
 const cube  = document.querySelector('.cube');
+const cubeRect = cube.getBoundingClientRect()
 const text = document.querySelector('.text');
+const xAxis = cubeRect['width']/2;
+const yAxis = cubeRect['height']/2;
 let counter = 0;
 
 const spin = () =>{
-  deltaY  = event.movementY/100;
-  deltaX = event.movementX/100;
-  
-  atan = Math.abs(Math.atan2(deltaY,deltaX));
-  degrees = toDegrees(atan);
+  deltaY = event.offsetY - yAxis;
+  deltaX = event.offsetX - xAxis;
 
-  cube.style.transform = `rotate3d(${Math.floor(deltaX)},${Math.floor(deltaY)},${Math.floor(degrees)},${counter}deg)`;
-  counter = counter + degrees/20;
-  text.innerHTML = `deltaX: ${deltaX}<br>deltaY: ${deltaY}<br>counter: ${counter}<br>arcTan: ${degrees}`;
+  atan = Math.atan2(deltaY,deltaX);
+  degrees = toDegrees(atan);
+  
+  cube.style.transform = `rotate(${counter}deg)`;
+  counter = counter + degrees/10;
+  text.innerHTML = `deltaX: ${deltaX}<br>deltaY: ${deltaY}<br>counter: ${counter}<br>degrees: ${degrees}`;
 }
 
 const play = () =>{
